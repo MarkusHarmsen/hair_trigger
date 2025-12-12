@@ -571,7 +571,7 @@ BEGIN
 
       def compatibility
         @compatibility ||= begin
-          if HairTrigger::VERSION <= "0.1.3"
+          if Gem::Version.new(HairTrigger::VERSION) <= Gem::Version.new("0.1.3")
             0 # initial releases
           else
             1 # postgres RETURN bugfix
